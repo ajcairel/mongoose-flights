@@ -13,7 +13,9 @@
     <tbody>
       <!-- Write the line of EJS to iterate over flights using forEach -->
       <!-- Sort the flights by ascending order -->
-      <% let sorted = flights.sort() %>
+      <% flights.sort(function(a, b) { %>
+        <% return a.departs - b.departs %>
+      <% }) %>
       <% flights.forEach(function(f) { %>
         <tr>
           <td><%= f.airline %></td>
