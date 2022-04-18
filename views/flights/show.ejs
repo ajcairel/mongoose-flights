@@ -40,6 +40,9 @@
         </tr>
       </thead>
       <tbody>
+        <% flight.destinations.sort(function(a, b) { %>
+            <% return a.arrival - b.arrival %>
+          <% }) %>
         <% flight.destinations.forEach(function(d) { %>
           <tr>
             <td><%= d.airport %></td>
