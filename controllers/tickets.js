@@ -8,7 +8,7 @@ module.exports = {
 
 function newTicket(req, res){
     // res.render('tickets/new', {flightId: req.params.id})
-    res.render('tickets/new', {flightId: req.params.id })
+    res.render('tickets/new', {flightId: req.params.id }) // flightId is for action in new form!!!!
 }
 
 function create(req, res){
@@ -18,6 +18,7 @@ function create(req, res){
         if (err) return res.render('tickets/new');
         console.log(ticket);
         console.log(req.body);
+        console.log('FLIGHT: ' + ticket.flight);
         res.redirect(`/flights/${req.params.id}`);
     })
 }

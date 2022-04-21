@@ -17,7 +17,7 @@ module.exports = {
 
 function show(req, res) {
     Flight.findById(req.params.id, function(err, flight) {
-        Ticket.find({flightId: flight._id}, function(err, tickets) {
+        Ticket.find({flight: flight._id}, function(err, tickets) {
             res.render('flights/show', { flight, tickets});
         }); 
     });
